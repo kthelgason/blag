@@ -5,6 +5,7 @@ permalink: /about/
 ---
 
 I'm Kári. I do
+
     * Computers
     * Crossfit
     * Running
