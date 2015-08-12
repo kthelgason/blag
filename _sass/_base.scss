@@ -23,6 +23,22 @@ body {
     -webkit-text-size-adjust: 100%;
 }
 
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid #bbbbbb;
+    border-radius: 4px;
+    background-color: white;
+}
 
 
 /**
