@@ -1,7 +1,7 @@
 # Site settings
 title: Segmentation Fault
 author: Kári Tristan Helgason
-author_avatar: https://gravatar.com/avatar/c8d3a2f5d38745ff6602450e14c0613c?s=50
+author_avatar: https://gravatar.com/avatar/c8d3a2f5d38745ff6602450e14c0613c?s=100
 email: kthelgason@gmail.com
 description: My personal blog.
 baseurl: "" # optional
@@ -9,7 +9,7 @@ url: "http://sigsegv.is"
 twitter_username: karitristan
 github_username: kthelgason
 github_repo: kthelgason/blag
-#google_analytics: UA-80085-YOUR-ID
+google_analytics: "UA-68034616-1"
 # disqus: disqus-id
 
 # Build settings
