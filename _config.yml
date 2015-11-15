@@ -1,12 +1,20 @@
 # Site settings
-title: Segmentation Violation
+title: Segmentation Fault
+author: Kári Tristan Helgason
+author_avatar: https://gravatar.com/avatar/df861b39febc6c3197c671a967acb234?s=50
 email: kthelgason@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://sigsegv.is" # the base hostname & protocol for your site
+description: My personal blog.
+baseurl: "" # optional
+url: "http://sigsegv.is"
 twitter_username: karitristan
-github_username:  kthelgason
+github_username: kthelgason
+github_repo: kthelgason/blag
+#google_analytics: UA-80085-YOUR-ID
+# disqus: disqus-id
 
 # Build settings
 markdown: kramdown
+permalink: pretty
+excerpt_separator: "<!-- more -->"
+
+gems: [jekyll-sitemap]
