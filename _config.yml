@@ -16,5 +16,7 @@ google_analytics: "UA-68034616-1"
 markdown: kramdown
 permalink: pretty
 excerpt_separator: "<!-- more -->"
+css:
+  style: compressed
 
 gems: [jekyll-sitemap]
