@@ -47,7 +47,7 @@ task :assets do
   abort("rake aborted: '#{CONFIG['static']}' directory not found.") unless FileTest.directory?(CONFIG['static'])
   Dir.foreach CONFIG['static'] do |file_name|
     if file_name.end_with?('jpg', 'png', 'gif')
-      hashed_name = (hash_string file_name) + '-' + file_name
+      hashed_name = (hash_file File.join(CONFIG['static'], file_name)) + '-' + file_name
       puts "#{file_name} => #{hashed_name}"
       Dir.foreach CONFIG['posts'] do |post_name|
         post = File.join(CONFIG['posts'], post_name)
@@ -323,9 +323,9 @@ def get_stdin(message)
   STDIN.gets.chomp
 end
 
-def hash_string(string)
+def hash_file(filename)
   md5 = Digest::MD5.new
-  md5 << string
+  md5 << File.read(filename)
   md5.hexdigest
 end
 
