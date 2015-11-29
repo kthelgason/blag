@@ -154,6 +154,7 @@ em {
 }
 .entry .entry-body p {
     margin: 15px 0;
+    text-align: justify;
 }
 .entry .entry-body p.caption {
     font-size: 14px;
@@ -226,6 +227,13 @@ em {
 
 .gist {
     font-size: 14px;
+}
+
+.entry code {
+  border: 1px solid #ddd;
+  background: #fafafa;
+  padding: 1px 2px;
+  border-radius: 3px;
 }
 
 .entry pre code {
