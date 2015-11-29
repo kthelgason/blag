@@ -48,11 +48,11 @@ task :assets do
   Dir.foreach CONFIG['static'] do |file_name|
     if file_name.end_with?('jpg', 'png', 'gif')
       hashed_name = (hash_string file_name) + '-' + file_name
+      puts "#{file_name} => #{hashed_name}"
       Dir.foreach CONFIG['posts'] do |post_name|
         post = File.join(CONFIG['posts'], post_name)
         replace_word_in_file(post, file_name, hashed_name) unless File.directory? post
       end
-      puts "#{file_name} => #{hashed_name}"
       File.rename(File.join(CONFIG['static'], file_name), File.join(CONFIG['static'], hashed_name))
     end
   end
