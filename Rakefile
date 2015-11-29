@@ -2,6 +2,7 @@ require "rubygems"
 require 'rake'
 require 'yaml'
 require 'time'
+require 'digest'
 
 SOURCE = "."
 CONFIG = {
@@ -9,6 +10,7 @@ CONFIG = {
   'themes' => File.join(SOURCE, "_includes", "themes"),
   'layouts' => File.join(SOURCE, "_layouts"),
   'posts' => File.join(SOURCE, "_posts"),
+  'static' => File.join(SOURCE, "assets"),
   'post_ext' => "md",
   'theme_package_version' => "0.1.0"
 }
@@ -39,6 +41,22 @@ module JB
 
   end #Path
 end #JB
+
+desc "Hash assets"
+task :assets do
+  abort("rake aborted: '#{CONFIG['static']}' directory not found.") unless FileTest.directory?(CONFIG['static'])
+  Dir.foreach CONFIG['static'] do |file_name|
+    if file_name.end_with?('jpg', 'png', 'gif')
+      hashed_name = (hash_string file_name) + '-' + file_name
+      Dir.foreach CONFIG['posts'] do |post_name|
+        post = File.join(CONFIG['posts'], post_name)
+        replace_word_in_file(post, file_name, hashed_name) unless File.directory? post
+      end
+      puts "#{file_name} => #{hashed_name}"
+      File.rename(File.join(CONFIG['static'], file_name), File.join(CONFIG['static'], hashed_name))
+    end
+  end
+end
 
 # Usage: rake post title="A Title" [date="2012-02-09"] [tags=[tag1,tag2]] [category="category"]
 desc "Begin a new post in #{CONFIG['posts']}"
@@ -303,6 +321,17 @@ end
 def get_stdin(message)
   print message
   STDIN.gets.chomp
+end
+
+def hash_string(string)
+  md5 = Digest::MD5.new
+  md5 << string
+  md5.hexdigest
+end
+
+def replace_word_in_file(file, old, new)
+  text = File.read(file)
+  File.open(file, 'w') {|f| f.puts text.gsub(old, new)}
 end
 
 #Load custom rake scripts
