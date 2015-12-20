@@ -265,12 +265,9 @@ em {
 }
 
 @media all and (max-width: 550px) {
-    #site-title img {
-        width: 25px;
-    }
     .links a {
-        margin-right: 2px;
-        font-size: 14px;
+        margin-right: 12px;
+        font-size: 22px;
     }
     .links .github-link {
         float: none;
