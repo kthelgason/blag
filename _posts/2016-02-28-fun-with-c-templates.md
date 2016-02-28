@@ -9,7 +9,7 @@ It's been long enough since my last post that I had forgotten the rake task that
 I've been playing around with some C++ recently, to refresh my skills a bit. I haven't done any C++ since my first year of university,
 and I liked getting back into it a lot more than I expected. I implemented some basic data structures and used them in some textbook
 algorithms to solve problems from [Cracking the coding interview][1]. I found it really nice to have a compiler by my side while programming,
-it really speeds up the feedback cycle of development, and I really miss it while doing javascript at work. Perhaps it's time for another look
+it really speeds up the feedback cycle of development, and I really miss it while doing JavaScript at work. Perhaps it's time for another look
 at [Flow][2]?
 
 <!-- more -->
@@ -21,7 +21,7 @@ pass to a function. This enables all sorts of sexy FP goodness, and allows for w
 
 Another feature of C++ that I just discovered was the full power of the templating system. I've heard that C++ templates are Turing-complete
 and so on, but I never gave this any further thought. I used to think this was an academic triviality, like the fact that Conway's game of life
-is Turing-complete, and the only useage of templates I had ever come across was to genericise(is that a word?) container classes to handle
+is Turing-complete, and the only usage of templates I had ever come across was to genericise(is that a word?) container classes to handle
 multiple datatypes. Turns out templates are a _lot_ more powerful than that.
 
 In order to explore these new (to me) concepts I created a tiny vector implementation ([source][3]).
@@ -44,7 +44,7 @@ v1.at<0>; // => 'a'
 v1.set<3>('d'); // *bleep*
 
 {% endhighlight %}
-The latter of these will fail to compile, emiting a helpful error message:
+The latter of these will fail to compile, emitting a helpful error message:
 
     ./../vec.hpp:48:9: error: static_assert failed "Out of bounds access"
 
@@ -76,10 +76,13 @@ that something very similar to what I was doing already exists in an more powerf
 but generalized to be able to hold heterogeneous values. This is made possible by another really cool language feature, [variadic templates][4],
 that I hope to explore more in the future.
 
-That's it for today! Please check out the code on [github][3] if you're interested, and please let me know where I'm doing something
+That's it for today! Please check out the code on [GitHub][3] if you're interested, and please let me know where I'm doing something
 stupid and how it can be made better.
+
+Thanks to [Hrafn Eiríksson][5] for reading a draft of this post.
 
 [1]: http://smile.amazon.com/gp/product/0984782850?keywords=cracking%20the%20coding%20interview%206th%20edition&qid=1456668580&ref_=sr_1_1&sr=8-1
 [2]: https://github.com/facebook/flow
 [3]: https://github.com/kthelgason/vecpp
 [4]: https://en.wikipedia.org/wiki/Variadic_template
+[5]: http://hrafn.eiriksson.is
